@@ -2,47 +2,51 @@
 
 == Installing:
 
-    $ git clone git@github.com:guivinicius/jGoogleStaticMaps.git
+  cd myApp/javascripts
+  $ git clone git@github.com:guivinicius/jGoogleStaticMaps.git
 
 == Usage:
 
 The standard use:
 
-	$('#map').googleStaticMap({
-		'center'    : '-23.507,-47.455',
-		'zoom'      : '14',
-		'size'      : '500x400',
-		'format'    : 'JPEG',
-		'maptype'   : 'roadmap',
-		'language'  : 'en',
-		'markers'   : '-23.507,-47.455',
-		'sensor'    : false
-	});
+  $('#map').googleStaticMap({
+    'center'    : '-23.507,-47.455',
+    'zoom'      : '14',
+    'size'      : '500x400',
+    'format'    : 'JPEG',
+    'maptype'   : 'roadmap',
+    'language'  : 'en',
+    'markers'   : '-23.507,-47.455',
+    'sensor'    : false
+  });
 	
 Or:
 
-  	var settings = {
-		'center'    : '-23.507,-47.455',
-		'zoom'      : '14',
-		'size'      : '500x400',
-		'format'    : 'JPEG',
-		'maptype'   : 'roadmap',
-		'language'  : 'en',
-		'markers'   : '-23.507,-47.455',
-		'sensor'    : false
-	};
+  var settings = {
+    'center'    : '-23.507,-47.455',
+    'zoom'      : '14',
+    'size'      : '500x400',
+    'format'    : 'JPEG',
+    'maptype'   : 'roadmap',
+    'language'  : 'en',
+    'markers'   : '-23.507,-47.455',
+    'sensor'    : false
+  };
 	
-	$('#map').googleStaticMap(settings);
+  $('#map').googleStaticMap(settings);
 	
-	
-	'path'      : '', *NOT WORKING YET*
-	'visible'   : '', *NOT WORKING YET*
-	'style'     : '', *NOT WORKING YET*
-	
-See the variables documentation on Google Official Website:
+TODO's:
 
-  http://code.google.com/apis/maps/documentation/staticmaps/
+  Variables
+	
+  'path'      : '', *NOT WORKING YET*
+  'visible'   : '', *NOT WORKING YET*
+  'style'     : '', *NOT WORKING YET*
+	
+  and the most *important*, multiple markers feature will be released soon! =]
+	
+See the variables documentation on Google Official Website: http://code.google.com/apis/maps/documentation/staticmaps/
 
 == License:
 
-	MIT-LICENSE
+  MIT-LICENSE
