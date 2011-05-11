@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>jGoogleStaticMaps Tests Suite</title>
+  <link rel="stylesheet" href="qunit/qunit/qunit.css" type="text/css" media="screen" title="no title" charset="utf-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="qunit/qunit/qunit.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../src/jquery.GoogleStaticMaps.js" type="text/javascript" charset="utf-8"></script>
+  <script src="unit/tests.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+<body>
+  <h1 id="qunit-header"></h1>
+  <h2 id="qunit-banner"></h2>
+  <div id="qunit-testrunner-toolbar"></div>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
+  <div id="qunit-fixture">
+	<div id="map"></div>
+	<div id="map-with-style" style="width:500px; height:500px;" ></div>
+	<div id="map-with-latlnt" lat="-23.507" lng="-47.455"></div>
+	<div id="map-with-location" location="Sorocaba"></div>
+	<div id="map-with-both" lat="-23.507" lng="-47.455" location="Sorocaba"></div>	
+  </div>
+</body>
+</html>
