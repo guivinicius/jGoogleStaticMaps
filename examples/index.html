@@ -8,7 +8,18 @@
 		
 		<script type="text/javascript" charset="utf-8">
 		$(document).ready(function() {
-			$('#map').googleStaticMap();
+			var settings = {
+			    center    : '-23.507,-47.455',
+			    zoom      : '14',
+			    size      : '500x400',
+			    format    : 'JPEG',
+			    maptype   : 'roadmap',
+			    language  : 'en',
+			    markers   : '-23.507,-47.455',
+			    sensor    : false
+			  };
+			
+			$('#map').googleStaticMap(settings);
 		});
 		</script>
 		<style type="text/css" media="screen">

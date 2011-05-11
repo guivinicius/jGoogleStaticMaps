@@ -10,27 +10,27 @@
 The standard use:
 
   $('#map').googleStaticMap({
-    'center'    : '-23.507,-47.455',
-    'zoom'      : '14',
-    'size'      : '500x400',
-    'format'    : 'JPEG',
-    'maptype'   : 'roadmap',
-    'language'  : 'en',
-    'markers'   : '-23.507,-47.455',
-    'sensor'    : false
+    center    : '-23.507,-47.455',
+    zoom      : '14',
+    size      : '500x400',
+    format    : 'JPEG',
+    maptype   : 'roadmap',
+    language  : 'en',
+    markers   : '-23.507,-47.455',
+    sensor    : false
   });
 	
 Or:
 
   var settings = {
-    'center'    : '-23.507,-47.455',
-    'zoom'      : '14',
-    'size'      : '500x400',
-    'format'    : 'JPEG',
-    'maptype'   : 'roadmap',
-    'language'  : 'en',
-    'markers'   : '-23.507,-47.455',
-    'sensor'    : false
+    center    : '-23.507,-47.455',
+    zoom      : '14',
+    size      : '500x400',
+    format    : 'JPEG',
+    maptype   : 'roadmap',
+    language  : 'en',
+    markers   : '-23.507,-47.455',
+    sensor    : false
   };
 	
   $('#map').googleStaticMap(settings);
