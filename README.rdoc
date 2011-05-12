@@ -9,7 +9,7 @@
 
 The standard use:
 
-  $('#map').googleStaticMap({
+  $('div.#map').googleStaticMap({
     center    : '-23.507,-47.455',
     zoom      : '14',
     size      : '500x400',
@@ -33,9 +33,25 @@ Or:
     sensor    : false
   };
 	
-  $('#map').googleStaticMap(settings);
-	
-TODO's:
+  $('div.#map').googleStaticMap(settings);
+
+Other ways:
+
+You can add a *lat* and *lng* attribute to your html tag, and the plugin will do the job.
+
+  <div id="map" lat="-23.55" lng="-46.64"></div>
+
+or you can pass a *location* attribute to your html tag like this:
+
+  <div id="map" location="Dublin, Ireland"></div>
+
+the *location* attribute work with both coordinates and addresses.
+
+*IMPORTANT*
+
+In case of both attributes in the same element the plugin uses the *lat* and *lng* to work.
+
+== TODO's:
 
   Variables
 	
@@ -46,6 +62,12 @@ TODO's:
   and the most *important*, multiple markers feature will be released soon! =]
 	
 See the variables documentation on Google Official Website: http://code.google.com/apis/maps/documentation/staticmaps/
+
+== ISSUES / SUGGESTIONS
+
+Please open a issue and tag it!
+
+I will be happy to solve you problem or work in your idea.
 
 == License:
 
