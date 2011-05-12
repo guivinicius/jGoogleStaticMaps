@@ -9,15 +9,15 @@
  *
  * Copyright Forever Guilherme Moreira
  */
-(function( $ ){
+(function( $ ){	
   $.fn.googleStaticMap = function( options ) {
-	
-	// Cleaning the element.
-  	this.empty();
 	
 	// Default Google API URL
 	var API_URL = "http://maps.google.com/maps/api/staticmap?";
 	
+	// Cleaning the element.
+  	this.empty();
+
 	// Default settings.
 	var settings = {
 		center    : '',
@@ -27,29 +27,53 @@
 		maptype   : 'roadmap',
 		language  : 'en',
 		markers   : '',
-		// 'path'      : 'top', TODO
-		// 'visible'   : 'top', TODO
-		// 'style'     : 'top', TODO
 		sensor    : false
 	};
 	
-	if ( options ) { 
-		$.extend( settings, options );
-		settings.markers = settings.markers.replace(" ", "+");
-		settings.center = settings.center.replace(" ", "+"); 
-	} else if ( (this.attr('location') != null) || ((this.attr('lat') != null) && (this.attr('lng') != null)) ) {
-		if  (this.attr('location') != "") {
-			location = this.attr('location');
-			location = location.replace(" ","+");				
-		} else {
-			location = this.attr('lat')+","+this.attr('lng');		
+	// Getting all the possible values
+	var lat 	 = this.attr("lat");
+	var lng 	 = this.attr("lng");
+	var location = this.attr("location");
+	var width    = this.width();
+	var height	 = this.height();
+	
+	if ( options ) {
+		var center  = options.center;
+		var markers = options.markers;
+		var size	= options.size;
+	};
+	
+	// Verifying if has at least one of the localization parameters.
+	if ( (lat && lng) || (location) || (center) || (markers) ){
+		
+		// Merging options into settings.
+		if ( options ) {
+			$.extend( settings, options );
+		}
+		// Define the map size from the element width and height.
+		if ( !size ) {
+			if ( (width != 0) && (height != 0) ){ settings.size = width+"x"+height };	
 		}		
+		
+		if ( (settings.center == "") && (settings.markers == "") ) {
+			if ( (lat && lng) ) {
+				settings.markers = lat+","+lng;
+				settings.center  = lat+","+lng;
+			} else if ( location ) {
+				settings.markers = location;
+				settings.center  = location;
+			}	
+		}
+		
+		settings.markers = settings.markers.replace(" ", "+");
+		settings.center = settings.center.replace(" ", "+");	
+		
 	} else {
-		return this.html("Hey I need a location!!! Read the documentation.");
+		return this.html("Hey I need parameters!!! Read the documentation.");
 	}
 	
-	this.html(function() {        
-	
+	this.html(function() {        	
+		
 		var arr = new Array();
 		var cont = 0
 		$.each(settings, function(k, v) {
@@ -57,7 +81,6 @@
 			cont++;
 		});
 		var string = arr.join('&');
-	
 	
 		var URL = API_URL + string;
 		var image_tag = "<img src=\""+URL+"\">";
